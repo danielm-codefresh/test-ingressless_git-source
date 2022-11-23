@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: test-apps
+    namespace: test-apps3
   syncPolicy:
     automated:
       prune: false
