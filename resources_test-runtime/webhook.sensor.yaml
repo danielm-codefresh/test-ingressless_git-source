@@ -8,30 +8,31 @@ spec:
    eventSourceName: webhook-es
    name: webhook-dep
  eventBusName: codefresh-eventbus
- template:
-   serviceAccountName: argo-server
+#  template:
+#    serviceAccountName: argo-server
  triggers:
  - template:
-     argoWorkflow:
-       group: argoproj.io
-       operation: submit
-       parameters:
-       - dest: spec.arguments.parameters.0.value
-         src:
-           dataKey: body.stam
-           dependencyName: webhook-dep
-       resource: workflows
-       source:
-         resource:
-           apiVersion: argoproj.io/v1alpha1
-           kind: Workflow
-           metadata:
-             generateName: webhook-wf-
-           spec:
-             arguments:
-               parameters:
-               - name: message
-             workflowTemplateRef:
-               name: hello-world
-       version: v1alpha1
+#      argoWorkflow:
+#        group: argoproj.io
+#        operation: submit
+#        parameters:
+#        - dest: spec.arguments.parameters.0.value
+#          src:
+#            dataKey: body.stam
+#            dependencyName: webhook-dep
+#        resource: workflows
+#        source:
+#          resource:
+#            apiVersion: argoproj.io/v1alpha1
+#            kind: Workflow
+#            metadata:
+#              generateName: webhook-wf-
+#            spec:
+#              arguments:
+#                parameters:
+#                - name: message
+#              workflowTemplateRef:
+#                name: hello-world
+#        version: v1alpha1
      name: hello-world
+     log: {}
