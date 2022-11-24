@@ -3,7 +3,7 @@ kind: EventSource
 metadata:
  name: webhook-es
 spec:
-#  eventBusName: codefresh-eventbus
+ eventBusName: codefresh-eventbus
  service:
    ports:
      - port: 80
