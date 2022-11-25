@@ -1,0 +1,12 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: codefresh-eventbus-servicemonitor
+spec:
+  selector:
+    matchLabels:
+      controller: eventbus-controller
+      eventbus-name: codefresh-eventbus
+  endpoints:
+  - port: metrics
+    interval: 15s
